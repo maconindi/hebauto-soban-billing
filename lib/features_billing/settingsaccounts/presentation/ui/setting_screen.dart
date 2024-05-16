@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hebauto/core/components/dx_text.dart';
 import 'package:hebauto/core/util/colors.dart';
 import 'package:hebauto/core/util/decorations.dart';
 import 'package:hebauto/core/util/ext/context.dart';
-
+import 'package:hebauto/features_billing/chartofaccounts/presentation/ui/chart_of_accounts_screen.dart';
+import 'package:hebauto/features_billing/dashboard/presentation/bloc/billing_dashboard_bloc.dart';
+import 'package:hebauto/features_billing/dashboard/presentation/bloc/billing_dashboard_events.dart';
 
 class SettingScreen extends StatefulWidget {
   const SettingScreen({super.key});
@@ -54,10 +57,17 @@ class _SettingScreenState extends State<SettingScreen> {
                           Padding(
                             padding: const EdgeInsets.all(16.0),
                             child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 TextButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    //   context.read<BillingDashboardBloc>().add(
+                                    //   DashboardChangeScreenEvent(
+                                    //     const Center(
+                                    //       child: Converterbox(),
+                                    //     ),
+                                    //   ),
+                                    // );
+                                  },
                                   child: const Row(
                                     children: [
                                       Icon(
@@ -81,7 +91,15 @@ class _SettingScreenState extends State<SettingScreen> {
                                   width: 120,
                                 ),
                                 TextButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    context.read<BillingDashboardBloc>().add(
+                                          DashboardChangeScreenEvent(
+                                            const Center(
+                                              child: ChartOfAccountsScreen(),
+                                            ),
+                                          ),
+                                        );
+                                  },
                                   child: const Row(
                                     children: [
                                       Icon(
@@ -106,12 +124,13 @@ class _SettingScreenState extends State<SettingScreen> {
                                 ),
                                 TextButton(
                                   onPressed: () {
-                                    // Navigator.push(
-                                    //   context,
-                                    //   MaterialPageRoute(
-                                    //       builder: (context) =>
-                                    //           const ChartOfAccountsScreen()), 
-                                    // );
+                                    // context.read<BillingDashboardBloc>().add(
+                                    //       DashboardChangeScreenEvent(
+                                    //         const Center(
+                                    //           child: Converterbox(),
+                                    //         ),
+                                    //       ),
+                                    //     );
                                   },
                                   child: const Row(
                                     children: [

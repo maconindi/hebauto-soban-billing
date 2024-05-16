@@ -10,7 +10,6 @@ import '../../../../core/components/dx_image.dart';
 import '../../../../core/components/dx_slidebar_item.dart';
 import '../../../../core/routing/app_route.dart';
 import '../../../../generated/assets.dart';
-import '../../../chartofaccounts/presentation/ui/chart_of_accounts_screen.dart';
 import '../../../inventory/presentation/ui/inventory_screen.dart';
 import '../../../purchases/presentation/ui/add_purchase_screen.dart';
 import '../../../reports/presentation/ui/reports_screen.dart';
@@ -127,19 +126,19 @@ class DashboardSideBarBilling extends StatelessWidget {
                   icon: Icons.inventory_rounded,
                   onTap: () {},
                 ),
-                SlideBarItem(
-                  text: 'Chart of Accounts',
-                  icon: Icons.account_tree_outlined,
-                  onTap: () {
-                    context.read<BillingDashboardBloc>().add(
-                          DashboardChangeScreenEvent(
-                            const Center(
-                              child: ChartOfAccountsScreen(),
-                            ),
-                          ),
-                        );
-                  },
-                ),
+                // SlideBarItem(
+                //   text: 'Chart of Accounts',
+                //   icon: Icons.account_tree_outlined,
+                //   onTap: () {
+                //     context.read<BillingDashboardBloc>().add(
+                //           DashboardChangeScreenEvent(
+                //             const Center(
+                //               child: ChartOfAccountsScreen(),
+                //             ),
+                //           ),
+                //         );
+                //   },
+                // ),
                 30.height,
                 SlideBarItem(
                   text: 'Settings',
